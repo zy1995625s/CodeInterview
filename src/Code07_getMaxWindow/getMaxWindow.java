@@ -5,21 +5,21 @@ import java.util.Queue;
 
 public class getMaxWindow {
 	public static int[] getMaxWindowMethod(int[] arr, int w) {
-		if(arr==null || w<1 ||arr.length<w) {
+		if (arr == null || w < 1 || arr.length < w) {
 			return null;
 		}
 		LinkedList<Integer> qmax = new LinkedList<Integer>();
-		int index=0;
-		int[] res = new int[arr.length-w+1];
-		for(int i=0; i<arr.length; i++) {
-			while(!qmax.isEmpty() && arr[qmax.peekLast()] < arr[i]) {
-				qmax.peekLast();
+		int index = 0;
+		int[] res = new int[arr.length - w + 1];
+		for (int i = 0; i < arr.length; i++) {
+			while (!qmax.isEmpty() && arr[qmax.peekLast()] <= arr[i]) {
+				qmax.pollLast();
 			}
 			qmax.addLast(i);
-			if(qmax.peekFirst() == i-w) {
-				qmax.pollFirst();
+			if (qmax.peekFirst() == i - w) {
+				qmax.peekFirst();
 			}
-			if(i > w) {
+			if (i > w) {
 				res[index++] = arr[qmax.peekFirst()];
 			}
 		}
