@@ -1,5 +1,10 @@
 package Code08_getMaxTree;
 
+/**
+ * 找左右两边第一个大的数，用栈底到栈顶单调递减的递减栈
+ * 左边第一个大的数，在目标元素入栈时确定
+ * 右边第一个大的数，在目标元素出栈时确定
+ */
 import java.util.HashMap;
 import java.util.Stack;
 
