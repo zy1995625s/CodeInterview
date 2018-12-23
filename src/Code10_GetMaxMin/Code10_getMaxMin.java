@@ -18,7 +18,7 @@ package Code10_GetMaxMin;
 	在O（1）时间内得到a[i...j+1]的最大值与最小值。
 	
 	此外，如果子数组arr[i...j]满足条件，那么其中每一个子数组都满足条件，
-	如果arr[i...j]不满足条件，那么其中每一个子数组都不满足条件。
+	如果arr[i...j]不满足条件，那么包含该数组的所有数组都不满足条件。
  */
 
 import java.util.LinkedList;
@@ -28,8 +28,8 @@ public class Code10_getMaxMin {
 		if(arr==null || arr.length==0) {
 			return 0;
 		}
-		LinkedList<Integer> qmin = new LinkedList<>();
-		LinkedList<Integer> qmax = new LinkedList<>();
+		LinkedList<Integer> qmin = new LinkedList<Integer>();
+		LinkedList<Integer> qmax = new LinkedList<Integer>();
 		int i=0;
 		int j=0;
 		int res=0;
