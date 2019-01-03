@@ -6,7 +6,7 @@ public class JosephusKill {
 			return head;
 		}
 		Node last = head;
-		while(last.next != null) {
+		while(last.next != head) {
 			last = last.next;
 		}
 		int count = 0;
